@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Layout</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Project1">
+  <meta name="author" content="Abdulmujeeb">
+  <meta name="viewport" content="width=device-width" initial-scale="1.0">
+  <meta name="robot" content="index, follow">
+  <link rel="icon" href="Icon.png">
+  
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header{
+      border-bottom: 4px dotted black;
+      margin-bottom: 1.5em;
+    }
+    
+    h2{
+      text-align: center;
+      word-spacing: 2px;
+    }
+    
+    .flexbox{
+      display: flex;
+      justify-content: space-around;
+      height: 35px;
+    }
+    
+    .grid-box{
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr;
+      gap: 5px 10px;
+    }
+    
+    .grid-box div{
+      border: 2px solid white;
+      background-color: grey;
+      color: white;
+      
+    }
+    
+    
+    
+  </style>
+  
+</head>
+
+<body>
+    <header>
+      <h2>Flexbox</h2>
+    </header>
+      <div class="flexbox">
+        <a href="#" class="item1">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Blogs</a>
+        <a href="#">Review</a>
+        
+      </div>
+      
+      
+    </div>
+    
+  </section>
+  
+  
+  <section class="grid-layout">
+    <header>
+      <h2>School Subjects on Grid</h2>
+    </header>
+    <div class="container">
+    <div class="grid-box">
+      <div class="grid1">Maths</div>
+      <div class="grid2">English</div>
+      <div class="grid3">Physics</div>
+      <div class="grid4">Chemistry</div>
+      <div class="grid5">Biology</div>
+     <div class="grid6">Igbo</div>
+      
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+  </section>
+  
+  
+  
+</body>
+
+</html>
