@@ -23,10 +23,9 @@ console.log(math3);
 console.log(math4);
 
 // DAY2 simple conditionals
-const btn = document.querySelector("button");
-const txt = document.querySelector("p");
-
+const btn = document.querySelector(".button");
 btn.addEventListener("click", ChangeBtn);
+const txt = document.querySelector(".p");
 
 function ChangeBtn() {
     if (btn.textContent === "Start machine") {
@@ -41,3 +40,15 @@ function ChangeBtn() {
         txt.textContent = "The machine is stopped.";
     }
 }
+
+//DAY 3 FUNCTIONS
+/* function Calculate(number) {
+  return number + number;
+}
+let calcresult = Calculate(4);
+console.log(calcresult);  */
+
+// SIMPLE ARROW FXN
+const Calculate = number => number + number;
+let calcresult = Calculate(4);
+console.log(calcresult);
