@@ -52,3 +52,49 @@ console.log(calcresult);  */
 const Calculate = number => number + number;
 let calcresult = Calculate(4);
 console.log(calcresult);
+
+const input = document.querySelector("#input");
+const container = document.querySelector("#container");
+const text = document.createElement("p");
+const check = document.querySelector("#check");
+const clear = document.querySelector("#clear");
+
+function evenCheck() {
+    const toCheck = parseFloat(input.value);
+    if (toCheck % 2 === 0) {
+        text.textContent = "You typed an even number";
+        container.appendChild(text);
+    } else if (toCheck % 2 > 0) {
+        text.textContent = "You typed an odd number";
+        container.appendChild(text);
+    } else {
+        text.textContent =
+            "Invalid input, Click the clear button and try again.";
+        text.style.backgroundColor = "Blue";
+        text.style.color = "white";
+    }
+}
+
+check.addEventListener("click", evenCheck);
+
+function toClear() {
+    input.value = "";
+    text.textContent = "";
+}
+clear.addEventListener("click", toClear);
+
+// ARRAY map and filter
+function lCat(lol) {
+    return lol.startsWith("L");
+}
+
+const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+const filtered = cats.filter(lCat);
+console.log(filtered);
+
+function catsToUp(up) {
+    return up.toUpperCase();
+}
+const upCats = cats.map(catsToUp);
+console.log(upCats);
