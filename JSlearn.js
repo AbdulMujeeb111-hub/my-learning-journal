@@ -64,7 +64,7 @@ function evenCheck() {
     if (toCheck % 2 === 0) {
         text.textContent = "You typed an even number";
         container.appendChild(text);
-    } else if (toCheck % 2 > 0) {
+    } else if (toCheck % 2 > 0 || toCheck % 2 < 0) {
         text.textContent = "You typed an odd number";
         container.appendChild(text);
     } else {
@@ -98,3 +98,19 @@ function catsToUp(up) {
 }
 const upCats = cats.map(catsToUp);
 console.log(upCats);
+
+// Objects
+const Developer = {
+    firstName: "Abdulmujeeb",
+    lastName: "Morakinyo",
+    age: 18,
+    stack: {
+        stack1: "html",
+        stack2: "css",
+        stack3: "js",
+        stack4: "inProgress"
+    }
+};
+Developer.age = 25;
+console.log(Developer.age);
+console.log(Developer.stack.stack2);
