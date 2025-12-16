@@ -114,3 +114,39 @@ const Developer = {
 Developer.age = 25;
 console.log(Developer.age);
 console.log(Developer.stack.stack2);
+
+// Events and DOM
+const select = document.querySelector("select");
+const section = document.querySelector("section");
+const choice = select.value;
+let response;
+
+function updateResponse() {
+    const choice = select.value;
+
+    if (choice === "summer") {
+        response = "We are in the summer, dress lightly and tan mildly.";
+    } else if (choice === "winter") {
+        response = "We are in the winter, dress well and sit by the fireplace.";
+    } else if (choice === "ham") {
+        response = "Nigerian harmattan is here, watch out for morning dews!";
+    } else {
+        response = "The season is ambigous. I do not know exactly what it is!";
+    }
+
+    // Clear previous content
+    section.innerHTML = "";
+
+    // Create new paragraph
+    const para1 = document.createElement("p");
+    para1.textContent = response;
+    para1.style.backgroundColor = "green";
+    para1.style.color = "white";
+    section.appendChild(para1);
+}
+
+// Listen for changes to the select element
+select.addEventListener("change", updateResponse);
+
+// Run once on page load to show initial state
+updateResponse();
