@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Local Storage test</title>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter your name">
+    <input type="text" id="othername" placeholder="Enter your other name">
+    <button id="save">Save</button>
+    <button id="load">Load</button>
+    <button id="clear">Clear</button>
+
+    <script>
+        
+      const saveBtn = document.getElementById('save');
+      const loadBtn = document.getElementById('load');
+        const clearBtn = document.getElementById('clear');
+        
+        
+        function saveData() {
+            const value = document.getElementById('username').value;
+            const value2 = document.getElementById('othername').value;
+            
+            
+            const data = {
+                username: value,
+                othername: value2,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('userData', JSON.stringify(data));
+            alert('Data saved!');
+            document.getElementById('username').value = '';
+document.getElementById('othername').value = ''; 
+        }
+        
+        function loadData() {
+            const jsonString = localStorage.getItem('userData');
+            
+            if (jsonString) {
+                const data = JSON.parse(jsonString);
+                document.getElementById('username').value = data.username;
+document.getElementById('othername').value = data.othername;                
+                
+                alert('Data loaded!');
+            } else {
+                alert('No data found!');
+            }
+        }
+        
+        function clearData() {
+            localStorage.removeItem('userData');
+            document.getElementById('username').value = '';
+document.getElementById('othername').value = '';            
+            alert('Data cleared!');
+        }
+        
+        saveBtn.addEventListener('click', saveData);
+        loadBtn.addEventListener('click', loadData);
+        clearBtn.addEventListener('click', clearData)
+    </script>
+</body>
+</html>

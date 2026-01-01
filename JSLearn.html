@@ -5,6 +5,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Documentation of JS Learning</title>
+        <style>
+            form {
+                display: inline-block;
+                padding: 1em;
+                border: 1px solid #cccccc;
+                border-radius: 1em;
+                margin-top: 20vh;
+            }
+
+            p + p {
+                margin-top: 1em;
+            }
+
+            label {
+                display: inline-block;
+                min-width: 90px;
+                text-align: right;
+            }
+
+            label > span {
+                color: red;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            
+            input[id="name"] {
+              position: relative;
+            }
+
+            input[id="name"]:focus::after {
+                display: block;
+                content: "This is a required field.";
+                position: absolute;
+            }
+
+            input,
+            textarea {
+                font: 1em sans-serif;
+                width: 300px;
+                box-sizing: border-box;
+                border: 1px solid #999999;
+            }
+
+            input:focus,
+            textarea:focus {
+                outline-style: solid;
+                outline-color: black;
+            }
+
+            textarea {
+                vertical-align: top;
+                height: 5em;
+            }
+
+            .formbutton {
+                padding-left: 90px;
+            }
+
+            button {
+                margin-left: 0.5em;
+            }
+        </style>
     </head>
     <body>
         <!-- simple function and conditional -->
@@ -18,7 +80,6 @@
             <button id="check">Check</button>
             <button id="clear">Clear</button>
         </div>
-        <script src="JSlearn.js" defer=""></script>
 
         <!-- for events and lil DOM -->
         <select>
@@ -28,5 +89,50 @@
             <option value="">error</option>
         </select>
         <section></section>
+
+        <!-- for forms and forms validation -->
+        <form action="/my-handling-form-page" method="post">
+            <h3>A simple message form</h3>
+            <p>
+                NB: &quot;
+                <span style="color: red">*</span>
+                &quot; represents a required text field.
+            </p>
+            <p>
+                <label for="name">
+                    Name:
+                    <span>*</span>
+                </label>
+                <input type="text" id="name" name="user_name" required="" />
+            </p>
+            <p>
+                <label for="mail">
+                    Email:
+                    <span>*</span>
+                </label>
+                <input type="email" id="mail" name="user_email" required="" />
+            </p>
+            <p>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </p>
+            <p>
+                <label for="range">Message:</label>
+                <input
+                    type="range"
+                    id="range"
+                    min="1000"
+                    max="100000"
+                    step="1000"
+                    value="2000"
+                />
+                <output for="range" id="range-output">2000</output>
+            </p>
+
+            <p class="formbutton">
+                <button type="submit">Send your message</button>
+            </p>
+        </form>
+        <script src="JSlearn.js" defer=""></script>
     </body>
 </html>

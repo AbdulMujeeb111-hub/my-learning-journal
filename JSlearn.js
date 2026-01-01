@@ -150,3 +150,13 @@ select.addEventListener("change", updateResponse);
 
 // Run once on page load to show initial state
 updateResponse();
+
+// FORM AND FORMS VALIDATION
+
+// range input form control test
+const range = document.querySelector("#range");
+const rangeOut = document.querySelector("#range-output");
+
+range.addEventListener("input", () => {
+    rangeOut.textContent = range.value;
+});
